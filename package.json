@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "description": "An Express.js middleware for parsing \"multipart/form-data\" content type",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitaliimarushko/express-parse-multipart.git"
   },
   "keywords": [
-    "express.js"
+    "express",
+    "express.js",
+    "form",
+    "data",
+    "formdata",
+    "multipart",
+    "middleware",
+    "upload",
+    "file"
   ],
   "author": "Vitalii Marushko",
   "license": "ISC",
