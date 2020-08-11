@@ -1,0 +1,22 @@
+{
+  "name": "express-parse-multipart",
+  "version": "1.0.0",
+  "description": "An Express.js middleware for parsing \"multipart/form-data\" content type",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitaliimarushko/express-parse-multipart.git"
+  },
+  "keywords": [
+    "express.js"
+  ],
+  "author": "Vitalii Marushko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitaliimarushko/express-parse-multipart/issues"
+  },
+  "homepage": "https://github.com/vitaliimarushko/express-parse-multipart#readme"
+}
