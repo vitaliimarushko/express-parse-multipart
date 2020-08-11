@@ -31,13 +31,12 @@ You will get as response:
 ```json
 [
   {
-    "data": {  // it's stringified Buffer
+    "data": {
       "type": "Buffer",
       "data": [
           78,
           97,
           109,
-          // ... lots values here
           57,
           10
       ]
@@ -53,7 +52,6 @@ You will get as response:
         137,
         80,
         78,
-        // ...
         96,
         130
       ]
