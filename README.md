@@ -1,6 +1,6 @@
 # Description
 
-This middleware parses request body with `multipart/form-data` specified content type and prepares an array of objects which represent every file which is sent in request. On the server side you will be able to get everything from `req.formData` array property (see an example below). Every array item will contain `data` property which is a Buffer.
+Middleware parses request body with `multipart/form-data` content type and prepares an array of objects which represent every file which is sent in request. On the server side you will be able to get that array from `req.formData` property (see an example below). Every array item will contain `data` property which is a Buffer.
 
 # Using
 
@@ -11,8 +11,8 @@ This middleware parses request body with `multipart/form-data` specified content
    const parseMp = require('express-parse-multipart');
    
    app.post('/upload', parseMp, (req, res) => {
-     // an array of files is inside "req.formData" property
-     return res.json(req.formData);
+     console.log(req.formData);  // here is the target array of objects
+     return res.send('Yay!');
    });
    
    app.listen(3000, () => console.log('Started on: http://localhost:3000'));
@@ -24,9 +24,9 @@ This middleware parses request body with `multipart/form-data` specified content
    node index.js
    ```
 
-3. Make a POST request using any tool you want and send any file (-s) on `http://localhost:3000/upload` route.
+3. Make a `POST` request using any tool you want and send any file (-s) on `http://localhost:3000/upload` route. Check console to see the parsed result.
 
-You will get as response:
+# Example of `req.formData`
 
 ```json
 [
@@ -34,11 +34,9 @@ You will get as response:
     "data": {
       "type": "Buffer",
       "data": [
-          78,
-          97,
-          109,
-          57,
-          10
+        78,
+        97,
+        10
       ]
     },
     "name": "file1",
@@ -51,14 +49,22 @@ You will get as response:
       "data": [
         137,
         80,
-        78,
-        96,
         130
       ]
     },
-    "name": "file2",
     "filename": "img_test.png",
     "type": "image/png"
+  },
+  {
+    "data": {
+      "type": "Buffer",
+      "data": [
+        74,
+        68,
+        69
+      ]
+    },
+    "name": "text1"
   }
 ]
 ```
